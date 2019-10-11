@@ -9,7 +9,7 @@
 import Foundation
 class Faculty {
     
-    var id: Int?
+    var facultyId: Int!
     var fName: String?
     var lName: String?
     var basicSalary: Float?
@@ -17,29 +17,35 @@ class Faculty {
     private var totalSalary: Float?
     
     init(id: Int, fName: String, lName: String, basicSalary: Float, bonus: Float) {
-        self.id = id
+        self.facultyId = id
         self.fName = fName
         self.lName = lName
         self.basicSalary = basicSalary
         self.bonus = bonus
     }
     
-    private var fullName: String {
-        return "\(fName ?? "") \(lName ?? "")"
+     func fullName(){
+        print("Faculty Name : \(fName!) \(lName!)")
     }
     
-    private var calculateTotalSalary: Float {
-        guard let basic = basicSalary, let bonus = bonus else {
-            print("Something happens wrong with basic and bonus")
-            return 0
-        }
-        return basic +  bonus
+    func calculateTotalSalary(){
+     
+        self.totalSalary = self.basicSalary! + self.bonus!
+        
     }
+    
+    
     
     func printData() {
-        print(id ?? 0, fullName, calculateTotalSalary)
+        print("Faculty Id : \(facultyId!)")
+        self.fullName()
+        print("Basic Salary : \(basicSalary!)")
+        print("Bonus : \(bonus!)")
+        print("Total Salary : \(totalSalary!)")
+    
     }
 }
+
 
 
 

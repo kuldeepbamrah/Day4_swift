@@ -18,3 +18,22 @@ s.calculatePercentage()
 s.showResult()
 s.printData()
 
+var f = Faculty(id: 01, fName: "Pritesh", lName: "Patel", basicSalary: 10000, bonus: 500)
+//f.calculateTotalSalary()
+
+var f2 = Faculty(id: 02, fName: "Ritik", lName: "Roshan", basicSalary: 3000, bonus: 45)
+//f2.calculateTotalSalary()
+
+var faculties = Dictionary<Int, Faculty>()
+faculties.updateValue(f, forKey: f.facultyId)
+faculties.updateValue(f2, forKey: f2.facultyId)
+
+
+for item in faculties{
+    print("*****************************")
+    item.value.calculateTotalSalary()
+    item.value.printData()
+    print("*****************************")
+}
+
+
