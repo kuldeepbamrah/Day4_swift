@@ -14,7 +14,21 @@ class Faculty {
     var lName: String?
     var basicSalary: Float?
     var bonus: Float?
-    private var totalSalary: Float?
+    
+    var fullName : String
+    {
+        return fName! + lName!
+    }
+    var comm: Float = 0.0
+    var totalSalary: Float
+    {
+        get{
+             return basicSalary! + (basicSalary! * comm / 100)
+        }
+        set(ncommi){
+            comm = ncommi
+        }
+    }
     
     init(id: Int, fName: String, lName: String, basicSalary: Float, bonus: Float) {
         self.facultyId = id
@@ -24,24 +38,26 @@ class Faculty {
         self.bonus = bonus
     }
     
-     func fullName(){
+     /*func fullName(){
         print("Faculty Name : \(fName!) \(lName!)")
-    }
+    }*/
     
-    func calculateTotalSalary(){
+    /*func calculateTotalSalary(){
      
         self.totalSalary = self.basicSalary! + self.bonus!
         
-    }
+    }*/
     
     
     
     func printData() {
         print("Faculty Id : \(facultyId!)")
-        self.fullName()
+        //self.fullName()
+        print("Faculty Name : \(fullName)")
         print("Basic Salary : \(basicSalary!)")
         print("Bonus : \(bonus!)")
-        print("Total Salary : \(totalSalary!)")
+        print("Commision : \(comm)")
+        print("Total Salary : \(totalSalary)")
     
     }
 }

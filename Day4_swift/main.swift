@@ -20,7 +20,8 @@ s.printData()
 
 var f = Faculty(id: 01, fName: "Pritesh", lName: "Patel", basicSalary: 10000, bonus: 500)
 //f.calculateTotalSalary()
-
+f.totalSalary = 5.0
+f.printData()
 var f2 = Faculty(id: 02, fName: "Ritik", lName: "Roshan", basicSalary: 3000, bonus: 45)
 //f2.calculateTotalSalary()
 
@@ -29,11 +30,11 @@ faculties.updateValue(f, forKey: f.facultyId)
 faculties.updateValue(f2, forKey: f2.facultyId)
 
 
-for item in faculties{
+/*for item in faculties{
     print("*****************************")
     item.value.calculateTotalSalary()
     item.value.printData()
     print("*****************************")
-}
+}*/
 
 
